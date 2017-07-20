@@ -1,1 +1,27 @@
-index
+<h1>All Photos</h1>
+
+<a href="/photos/new">
+  Add a new photo
+</a>
+
+<ul>
+  <% @photos.each do |photo| %>
+   <div class="thumbnail">
+    <img src="<%= photo.source %>">
+
+    <div class="caption">
+      <a href="/photos/<%= photo.id %>" class="btn btn-default btn-block">
+        Show Details
+      </a>
+
+      <a href="/photos/<%= photo.id %>/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+
+      <a href="/delete_photo/<%= photo.id %>" class="btn btn-default btn-block">
+        Delete
+      </a>
+    </div>
+  </div>
+  <% end %>
+</ul>
