@@ -32,7 +32,8 @@ class PicturesController < ApplicationController
         @photo.source = params["the_source"]
         @photo.caption = params["the_caption"]
         @photo.save
-        render("pictures_templates/update_row_template.html.erb")    
+        redirect_to("/photos")
+        # render("pictures_templates/update_row_template.html.erb")    
     end
     
     def destroy_row
