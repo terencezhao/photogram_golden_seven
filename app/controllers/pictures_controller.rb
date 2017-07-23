@@ -9,7 +9,8 @@ class PicturesController < ApplicationController
         new_photo.caption = params["the_caption"]
         new_photo.save
         @photo_count = Photo.all.count
-        render("pictures_templates/create_row_template.html.erb")    
+        redirect_to("/photos")
+        # render("pictures_templates/create_row_template.html.erb")    
     end
     
     def index
@@ -37,7 +38,8 @@ class PicturesController < ApplicationController
     def destroy_row
         Photo.find(params["toast_id"]).destroy
         @photo_count = Photo.all.count
-        render("pictures_templates/destroy_row_template.html.erb")    
+        redirect_to("/photos")
+        # render("pictures_templates/destroy_row_template.html.erb")    
     end    
 
 end
